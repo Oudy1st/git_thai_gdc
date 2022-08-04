@@ -389,6 +389,66 @@
         "required": true
       },
       {
+        "field_name": "data_classification",
+        "label": {
+          "en": "Data Classification",
+          "th": "ระดับชั้นความลับข้อมูล"
+        },
+        "preset": "select",
+        "choices": [
+          {
+          "value":"เปิดเผย (Open)",
+          "label":"เปิดเผย (Open)"
+          }, 
+          {
+          "value":"เผยแพร่ภายในองค์กร (Private)",
+          "label":"เผยแพร่ภายในองค์กร (Private)"
+          }, 
+          {
+          "value":"ลับ (Confidential)",
+          "label":"ลับ (Confidential)"
+          }, 
+          {
+          "value":"ลับมาก (Secret)",
+          "label":"ลับมาก (Secret)"
+          }, 
+          {
+          "value":"ลับที่สุด (Top Secret)",
+          "label":"ลับที่สุด (Top Secret)"
+          }
+          ],
+        
+        "required": true,
+        "form_data_type": ["ข้อมูลระเบียน","ข้อมูลสถิติ","ข้อมูลภูมิสารสนเทศเชิงพื้นที่","ข้อมูลหลากหลายประเภท","ข้อมูลประเภทอื่นๆ"]
+      },
+      {
+        "field_name": "personal_data",
+        "label": {
+          "en": "Personal Data",
+          "th": "สถานะข้อมูลส่วนบุคคล"
+        },
+        "choices": [
+          {
+            "value": "False",
+            "label": {
+              "en": "No",
+              "th": "ไม่เป็น"
+            }
+          },
+          {
+            "value": "True",
+            "label": {
+              "en": "Yes",
+              "th": "เป็น"
+            }
+          }
+        ],
+        "required": true,
+        "form_snippet": "select.html",
+        "display_snippet": "select.html",
+        "form_data_type": ["ข้อมูลระเบียน","ข้อมูลสถิติ","ข้อมูลภูมิสารสนเทศเชิงพื้นที่","ข้อมูลหลากหลายประเภท","ข้อมูลประเภทอื่นๆ"]
+      },
+      {
         "field_name": "data_format",
         "label": {
           "en": "Data Format",
