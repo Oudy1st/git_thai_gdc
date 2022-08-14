@@ -62,7 +62,6 @@ class BannerEditController(BaseController):
                 upload = uploader.get_uploader('admin')
                 upload.update_data_dict(data_dict, 'ckan.promoted_banner',
                                     'promoted_banner_upload', 'clear_promoted_banner_upload')
-                # upload.upload(uploader.get_max_image_size())
                 upload.upload(uploader.get_max_resource_size())
             
                 upload = uploader.get_uploader('admin')

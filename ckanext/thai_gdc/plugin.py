@@ -182,6 +182,9 @@ class Thai_GDCPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
             'ckan.import_uuid': [ignore_missing, unicode_safe],
             'ckan.import_row': [ignore_missing, unicode_safe],
             'ckan.import_params': [ignore_missing, unicode_safe],
+            'manual_upload': [ignore_missing, unicode_safe],
+            'ckan.site_manual': [ignore_missing, unicode_safe],
+            'clear_manual_upload': [ignore_missing, unicode_safe],
         })
 
         return schema
