@@ -38,8 +38,8 @@
                                         <tr>
                                             <td style="vertical-align:top"><i class="fa fa-book iconFooter" aria-hidden="true"></i></td>
                                             <td style="vertical-align:top"><p>
-                                                {% if g.site_manual %}
-                                                    <a href="{{ h.url_for_static(g.site_manual) }}" download>คู่มือการใช้งาน</a>
+                                                {% if g.promoted_banner %}
+                                                    <a href="{{ h.url_for_static(g.promoted_banner) }}" download>คู่มือการใช้งาน</a>
                                                 {% else %}
                                                     <a href="base/document/manual.pdf" download>คู่มือการใช้งาน</a>
                                                 {% endif %}

@@ -8,7 +8,7 @@
 
   <form method='post' action="" id="admin-config-form" enctype="multipart/form-data">
     {% block admin_form %}
-    <label class="control-label" for="field-image-url">Promoted banner</label>
+    <label class="control-label" for="field-file-url">Manual</label>
     {% set field_url = 'ckan.promoted_banner' %}
     {% set is_upload = data[field_url] and not data[field_url].startswith('http') %}
     {% set is_url = data[field_url] and data[field_url].startswith('http') %}
