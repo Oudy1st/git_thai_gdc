@@ -1,0 +1,18 @@
+html, body {
+    font-size: 14px;
+}
+h1 {
+    font-size: 20px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 28px;
+}
+a {
+    font-size: 14px;
+}
+.homepage .module-search .module-content .heading {
+    font-size: 24px;
+}

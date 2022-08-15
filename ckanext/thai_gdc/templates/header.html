@@ -1,6 +1,80 @@
 {% ckan_extends %}
 
+<script>
+  function setCookie(cname,cvalue,exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  
+    location.reload();
+  }
+  
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  
+  function checkCkanFont() {
+    let fontSize = getCookie("fontCkan");
+    if (fontSize != "") {
+      // alert("font size " + fontSize);
+      let cssPath = "css/normal.css"
+      if (fontSize == 'big') {
+          cssPath = "css/big.css"
+          var element = document.getElementById("fontBig");
+          element.classList.add("fontSizeActive");
+      } else if (fontSize == 'large') {
+          cssPath = "css/large.css"
+          var element = document.getElementById("fontLarge");
+          element.classList.add("fontSizeActive");
+      } else {
+          cssPath = "css/normal.css"
+          var element = document.getElementById("fontNormal");
+          element.classList.add("fontSizeActive");
+      }
+      document.getElementsByTagName("head")[0].insertAdjacentHTML(
+      "beforeend", cssPath
+      );
+      var element = document.createElement("link");
+      element.setAttribute("rel", "stylesheet");
+      element.setAttribute("type", "text/css");
+      element.setAttribute("href", cssPath);
+      document.getElementsByTagName("head")[0].appendChild(element);
+    } else {
+      const isCookieEnabled = navigator.cookieEnabled;
+      if (isCookieEnabled == false) {
+          alert("กรุณาเปิดใช้งานคุกกี้");
+      }
+    }
+  }
+
+  checkCkanFont()
+  </script>
+
 {% block header_account_logged %}
+<div class="row pd10_50">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="hidden-xs text-right">
+          <span id="fontNormal" onclick="setCookie('fontCkan', 'normal', 1)">ก</span>
+          &nbsp;
+          <span id="fontBig" onclick="setCookie('fontCkan', 'big', 1)">ก</span>
+          &nbsp;
+          <span id="fontLarge" onclick="setCookie('fontCkan', 'large', 1)">ก</span> 
+      </div>
+  </div>
+</div>
 <li>
   <a href="/user" title="{{ _('User') }}">
     <i class="fa fa-user" aria-hidden="true"></i>

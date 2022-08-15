@@ -1,0 +1,21 @@
+html, body {
+    font-size: 22px;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    font-size: 32px;
+}
+h3 {
+    font-size: 36px;
+}
+a {
+    font-size: 22px;
+}
+.homepage .module-search .module-content .heading {
+    font-size: 32px;
+}
+.media-heading {
+    font-size: 26px;
+}
