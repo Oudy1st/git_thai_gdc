@@ -36,14 +36,17 @@
             cssPath = "/css/git_font_normal.css"
             var element = document.getElementById("fontNormal");
             element.classList.add("fontSizeActive");
+            alert("add normal");
         } else if (fontSize == 'big') {
             cssPath = "/css/git_font_big.css"
             var element = document.getElementById("fontBig");
             element.classList.add("fontSizeActive");
+            alert("add big");
         } else if (fontSize == 'large') {
             cssPath = "/css/git_font_large.css"
             var element = document.getElementById("fontLarge");
             element.classList.add("fontSizeActive");
+            alert("add large");
         } 
         var element = document.createElement("link");
         element.setAttribute("rel", "stylesheet");
@@ -52,6 +55,7 @@
         let head = document.getElementsByTagName("head")[0]
         if (head != null) {
           head.appendChild(element);
+            alert("added css");
         } else {
         }
         
