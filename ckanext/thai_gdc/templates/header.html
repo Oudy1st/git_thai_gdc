@@ -1,5 +1,6 @@
 {% ckan_extends %}
 
+{% block header_account %}
 <li>
   <span id="fontNormal" onclick="setCookie('fontCkan', 'normal', 1)">ก</span>
   &nbsp;
@@ -7,8 +8,17 @@
   &nbsp;
   <span id="fontLarge" onclick="setCookie('fontCkan', 'large', 1)">ก</span> 
 </li>
+{{ super() }}
+{% endblock %}
 
 {% block header_account_logged %}
+<li>
+  <span id="fontNormal" onclick="setCookie('fontCkan', 'normal', 1)">ก</span>
+  &nbsp;
+  <span id="fontBig" onclick="setCookie('fontCkan', 'big', 1)">ก</span>
+  &nbsp;
+  <span id="fontLarge" onclick="setCookie('fontCkan', 'large', 1)">ก</span> 
+</li>
 <li>
   <a href="/user" title="{{ _('User') }}">
     <i class="fa fa-user" aria-hidden="true"></i>
