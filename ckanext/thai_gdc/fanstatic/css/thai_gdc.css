@@ -192,12 +192,12 @@ h1, h2, h3 {
   color: #ffffff;
 }
 
-#fontNormal {
+#fontSmall {
   margin-left: 5px;
   font-family: sukhumvitText;
   font-size: 14px;
 }
-#fontBig {
+#fontMedium {
   margin-left: 5px;
   font-family: sukhumvitText;
   font-size: 18px;
