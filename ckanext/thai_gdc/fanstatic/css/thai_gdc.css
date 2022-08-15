@@ -208,6 +208,7 @@ h1, h2, h3 {
   font-size: 22px;
 }
 .fontSizeActive {
+  color: #505050;
   font-weight: bold;
 }
 
