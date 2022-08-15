@@ -30,19 +30,17 @@
     function checkCkanFont() {
       let fontSize = getCookie("fontCkan");
       if (fontSize != "") {
-        let cssPath = "css/normal.css"
+        let cssPath = "css/git_font_big.css"
 
         if (fontSize == 'normal') {
             cssPath = "/css/git_font_normal.css"
             var element = document.getElementById("fontNormal");
             element.classList.add("fontSizeActive");
-        }
-        if (fontSize == 'big') {
+        } else if (fontSize == 'big') {
             cssPath = "/css/git_font_big.css"
             var element = document.getElementById("fontBig");
             element.classList.add("fontSizeActive");
-        } 
-        if (fontSize == 'large') {
+        } else if (fontSize == 'large') {
             cssPath = "/css/git_font_large.css"
             var element = document.getElementById("fontLarge");
             element.classList.add("fontSizeActive");
