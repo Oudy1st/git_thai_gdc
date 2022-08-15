@@ -33,26 +33,32 @@
         // alert("font size " + fontSize);
         let cssPath = "css/normal.css"
         if (fontSize == 'big') {
-            cssPath = "css/big.css"
+            cssPath = "/css/big.css"
             var element = document.getElementById("fontBig");
             element.classList.add("fontSizeActive");
         } else if (fontSize == 'large') {
-            cssPath = "css/large.css"
+            cssPath = "/css/large.css"
             var element = document.getElementById("fontLarge");
             element.classList.add("fontSizeActive");
         } else {
-            cssPath = "css/normal.css"
+            cssPath = "/css/normal.css"
             var element = document.getElementById("fontNormal");
             element.classList.add("fontSizeActive");
         }
-        document.getElementsByTagName("head")[0].insertAdjacentHTML(
-        "beforeend", cssPath
-        );
+        // document.getElementsByTagName("head")[0].insertAdjacentHTML(
+        // "beforeend", cssPath
+        // );
         var element = document.createElement("link");
         element.setAttribute("rel", "stylesheet");
         element.setAttribute("type", "text/css");
         element.setAttribute("href", cssPath);
-        document.getElementsByTagName("head")[0].appendChild(element);
+        let head = document.getElementsByTagName("head")[0]
+        if (head != null) {
+          head.appendChild(element);
+        } else {
+          alert("cannot find head")
+        }
+        
       } else {
         const isCookieEnabled = navigator.cookieEnabled;
         if (isCookieEnabled == false) {
